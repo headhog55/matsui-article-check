@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Draft Preview | KUAS</title>
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; font-family: sans-serif; }
+    #gate { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 20px; text-align: center; }
+    input { padding: 10px 14px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; }
+    button { padding: 10px 18px; font-size: 16px; background: #111; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="gate">
+    <h2 style="margin-bottom:8px;">Draft Preview</h2>
+    <p style="margin-bottom:20px; color:#555; font-size:14px;">Please enter the password to view this article.</p>
+    <div style="display:flex; gap:8px;">
+      <input type="password" id="pw" placeholder="Password" onkeydown="if(event.key==='Enter') unlock()" />
+      <button onclick="unlock()">Enter</button>
+    </div>
+    <p id="err" style="color:#d93025; font-size:13px; margin-top:10px; display:none;">Incorrect password. Please try again.</p>
+  </div>
+
+  <script>
+    function unlock() {
+      if (document.getElementById('pw').value === 'matsui2026') {
+        window.location.href = 'article.html';
+      } else {
+        document.getElementById('err').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
